@@ -388,6 +388,21 @@ function CustomizerCode() {
                 </>
               )
             )}
+            {["sidebar-background", "sidebar-foreground", "sidebar-primary", "sidebar-primary-foreground", "sidebar-accent", "sidebar-accent-foreground", "sidebar-border", "sidebar-ring"].map(
+              (prefix) => (
+                <>
+                  <span className="line text-white">
+                    &nbsp;&nbsp;&nbsp;&nbsp;--{prefix}:{" "}
+                    {
+                      activeTheme?.cssVars.light[
+                        prefix as keyof typeof activeTheme.cssVars.light
+                      ]
+                    }
+                    ;
+                  </span>
+                </>
+              )
+            )}
             <span className="line text-white">&nbsp;&nbsp;&#125;</span>
             <span className="line text-white">&nbsp;</span>
             <span className="line text-white">&nbsp;&nbsp;.dark &#123;</span>
@@ -456,6 +471,21 @@ function CustomizerCode() {
                 </>
               )
             )}
+            {["sidebar-background", "sidebar-foreground", "sidebar-primary", "sidebar-primary-foreground", "sidebar-accent", "sidebar-accent-foreground", "sidebar-border", "sidebar-ring"].map(
+              (prefix) => (
+                <>
+                  <span className="line text-white">
+                    &nbsp;&nbsp;&nbsp;&nbsp;--{prefix}:{" "}
+                    {
+                      activeTheme?.cssVars.dark[
+                        prefix as keyof typeof activeTheme.cssVars.dark
+                      ]
+                    }
+                    ;
+                  </span>
+                </>
+              )
+            )}
             <span className="line text-white">&nbsp;&nbsp;&#125;</span>
             <span className="line text-white">&#125;</span>
           </code>
@@ -504,6 +534,14 @@ const BASE_STYLES_WITH_VARIABLES = `
     --chart-3: <%- colors.light["chart-3"] %>;
     --chart-4: <%- colors.light["chart-4"] %>;
     --chart-5: <%- colors.light["chart-5"] %>;
+    --sidebar-background: <%- colors.light["sidebar-background"] %>;
+    --sidebar-foreground: <%- colors.light["sidebar-foreground"] %>;
+    --sidebar-primary: <%- colors.light["sidebar-primary"] %>;
+    --sidebar-primary-foreground: <%- colors.light["sidebar-primary-foreground"] %>;
+    --sidebar-accent: <%- colors.light["sidebar-accent"] %>;
+    --sidebar-accent-foreground: <%- colors.light["sidebar-accent-foreground"] %>;
+    --sidebar-border: <%- colors.light["sidebar-border"] %>;
+    --sidebar-ring: <%- colors.light["sidebar-ring"] %>;
   }
 
   .dark {
@@ -531,6 +569,14 @@ const BASE_STYLES_WITH_VARIABLES = `
     --chart-3: <%- colors.dark["chart-3"] %>;
     --chart-4: <%- colors.dark["chart-4"] %>;
     --chart-5: <%- colors.dark["chart-5"] %>;
+    --sidebar-background: <%- colors.dark["sidebar-background"] %>;
+    --sidebar-foreground: <%- colors.dark["sidebar-foreground"] %>;
+    --sidebar-primary: <%- colors.dark["sidebar-primary"] %>;
+    --sidebar-primary-foreground: <%- colors.dark["sidebar-primary-foreground"] %>;
+    --sidebar-accent: <%- colors.dark["sidebar-accent"] %>;
+    --sidebar-accent-foreground: <%- colors.dark["sidebar-accent-foreground"] %>;
+    --sidebar-border: <%- colors.dark["sidebar-border"] %>;
+    --sidebar-ring: <%- colors.dark["sidebar-ring"] %>;
   }
 }
 `
